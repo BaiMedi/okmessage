@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Mensajes Personalizados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #01BD39;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        select, input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            background-color: #01BD39;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #019e2f;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+        .cta {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .cta a {
+            text-decoration: none;
+            color: white;
+            background-color: #01BD39;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .cta a:hover {
+            background-color: #019e2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Mensajes Personalizados</h1>
+        <p>Selecciona las características principales de tu mensaje y recibe una versión optimizada lista para usar.</p>
+        
+        <form id="mensajeForm">
+            <div class="form-group">
+                <label for="tono">Tono del mensaje:</label>
+                <select id="tono">
+                    <option value="amigable">Amigable</option>
+                    <option value="profesional">Profesional</option>
+                    <option value="emocional">Emocional</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="formato">Formato del mensaje:</label>
+                <select id="formato">
+                    <option value="email">Email</option>
+                    <option value="whatsapp">WhatsApp</option>
+                    <option value="redes">Redes Sociales</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="objetivo">Objetivo del mensaje:</label>
+                <select id="objetivo">
+                    <option value="ventas">Ventas</option>
+                    <option value="informativo">Informativo</option>
+                    <option value="seguimiento">Seguimiento</option>
+                </select>
+            </div>
+            <button type="button" onclick="generarMensaje()">Generar Mensaje</button>
+        </form>
+        
+        <div id="resultado" class="result" style="display: none;"></div>
+        
+        <div class="cta">
+            <p>Revoluciona tu Negocio con el Poder del Chat Inteligente</p>
+            <a href="https://klicana.work/tdivKK">SÍ! INSCRIBIRME A LUCRACHAT IA!</a>
+        </div>
+    </div>
+
+    <script>
+        function generarMensaje() {
+            const tono = document.getElementById('tono').value;
+            const formato = document.getElementById('formato').value;
+            const objetivo = document.getElementById('objetivo').value;
+
+            let mensaje = "Tu mensaje generado es:\n\n";
+
+            if (tono === "amigable") {
+                mensaje += "¡Hola! ";
+            } else if (tono === "profesional") {
+                mensaje += "Estimado cliente, ";
+            } else {
+                mensaje += "Queremos compartir algo importante contigo: ";
+            }
+
+            if (objetivo === "ventas") {
+                mensaje += "descubre cómo nuestro producto puede ayudarte a lograr tus objetivos. ";
+            } else if (objetivo === "informativo") {
+                mensaje += "te traemos información relevante que podría interesarte. ";
+            } else {
+                mensaje += "queremos asegurarnos de que todo esté en orden. ";
+            }
+
+            if (formato === "email") {
+                mensaje += "Por favor, revisa tu bandeja para más detalles.";
+            } else if (formato === "whatsapp") {
+                mensaje += "Contáctanos respondiendo este mensaje.";
+            } else {
+                mensaje += "Mira nuestro contenido en nuestras redes sociales para más información.";
+            }
+
+            document.getElementById('resultado').innerHTML = `<h2>Resultado</h2><p>${mensaje}</p>`;
+            document.getElementById('resultado').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
